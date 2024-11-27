@@ -11,6 +11,7 @@
 .container {
     display: flex;
     justify-content: space-between;
+    
     gap: 30px;
 }
 button.prev,
@@ -40,7 +41,7 @@ button:hover {
     flex: 1;
     padding: 20px;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    background-color: #fff3e0;
     border-radius: 8px;
 }
 .slider-container {
@@ -105,40 +106,72 @@ button:hover {
         text-decoration: none;
     }</style>
 
+</head>
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <!-- Left section: Logo and Title -->
-        <div class="navbar-left">
-            <img src="logo.png" alt="PRMSU Logo">
-            <h1>PRMSU College of Engineering</h1>
-        </div>
-
-        <!-- Right section: Navigation Links and Search Bar -->
-        <div class="navbar-right">
-            <a href="HOME.html" id="home-link">Home</a>
-            <div class="dropdown" aria-label="Instruction">
-                <button class="dropbtn"><a href="Instruction.html">Instruction</a></button>
-                <div class="dropdown-content">
-                    <a href="curricular-offerings.html">Curricular Offerings</a>
-                    <a href="faculty.html">Faculty</a>
-                </div>
-            </div>
-            <div class="dropdown" aria-label="Research">
-                <button class="dropbtn"><a href="Research.html">Research</a></button>
-                <div class="dropdown-content">
-                    <a href="bsce-research.html">BSCE Research</a>
-                    <a href="bscpe-research.html">BSCpE Research</a>
-                    <a href="bsee-research.html">BSEE Research</a>
-                    <a href="bsme-research.html">BSME Research</a>
-                </div>
-            </div>
-            <a href="Extension.html">Extension</a>
-            <a href="History.html">History</a>
-            <input type="text" placeholder="Search..." class="search-bar" aria-label="Search Bar">
-        </div>
+ <div class="navbar">
+  <div class="navbar-left">
+   <img alt="PRMSU Logo" height="50" src="logo.png" width="50"/>
+   <h1>
+    PRMSU College of Engineering
+   </h1>
+  </div>
+  <div class="burger-menu" onclick="toggleMenu()">
+   <div>
+   </div>
+   <div>
+   </div>
+   <div>
+   </div>
+  </div>
+  <div class="navbar-right">
+   <a href="HOME.html" id="home-link">
+    Home
+   </a>
+   <div aria-label="Instruction" class="dropdown">
+    <button class="dropbtn">
+     <a href="Instruction.html">
+      Instruction
+     </a>
+    </button>
+    <div class="dropdown-content">
+     <a href="curricular-offerings.html">
+      Curricular Offerings
+     </a>
+     <a href="faculty.html">
+      Faculty
+     </a>
     </div>
-
+   </div>
+   <div aria-label="Research" class="dropdown">
+    <button class="dropbtn">
+     <a href="Research.html">
+      Research
+     </a>
+    </button>
+    <div class="dropdown-content">
+     <a href="bsce-research.html">
+      BSCE Research
+     </a>
+     <a href="bscpe-research.html">
+      BSCpE Research
+     </a>
+     <a href="bsee-research.html">
+      BSEE Research
+     </a>
+     <a href="bsme-research.html">
+      BSME Research
+     </a>
+    </div>
+   </div>
+   <a href="Extension.html">
+    Extension
+   </a>
+   <a href="History.html">
+    History
+   </a>
+   <input aria-label="Search Bar" class="search-bar" placeholder="Search..." type="text"/>
+  </div>
+ </div>
     <!-- Banner -->
     <div class="banner">
         <h1>Build your success. Enhance your future.</h1>

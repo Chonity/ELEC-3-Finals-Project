@@ -26,13 +26,7 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("slides");
     let dots = document.getElementsByClassName("dot");
-    
-    // Ensure the slides and dots exist
-    if (slides.length === 0 || dots.length === 0) {
-        console.error("Slides or dots not found.");
-        return;
-    }
-    
+
     // Wrap around the slides if the index goes out of bounds
     if (n > slides.length) { slideIndex = 1; }
     if (n < 1) { slideIndex = slides.length; }
@@ -52,3 +46,11 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
+// Set up auto-sliding
+setInterval(function() {
+    plusSlides(1); // Automatically move to the next slide
+}, 5000); // Change slide every 5 seconds
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('active');
+}
