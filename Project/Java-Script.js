@@ -21,29 +21,31 @@ function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
-// Main function to show slides
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("slides");
-    let dots = document.getElementsByClassName("dot");
+function showSlides(slideIndex) {
+    const slides = document.querySelectorAll(".mySlides");
+    const dots = document.querySelectorAll(".dot");
 
-    // Wrap around the slides if the index goes out of bounds
-    if (n > slides.length) { slideIndex = 1; }
-    if (n < 1) { slideIndex = slides.length; }
-    
-    // Hide all slides
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    // Hide all slides and remove "active" from all dots
+    slides.forEach(slide => {
+        slide.style.display = "none";
+    });
+    dots.forEach(dot => {
+        dot.className = dot.className.replace(" active", "");
+    });
+
+    // Ensure slideIndex is within bounds
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
     }
-
-    // Deactivate all dots
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+    if (slideIndex < 1) {
+        slideIndex = slides.length;
     }
 
     // Show the current slide and activate the corresponding dot
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+    if (slides[slideIndex - 1] && dots[slideIndex - 1]) {
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
 }
 
 // Set up auto-sliding
